@@ -1,19 +1,15 @@
-var express = require('express');
-var app = express();
-var ejs = require('ejs');
-app.set('view engine', 'ejs');
-app.use('/assets', express.static('assets'));
+var http = require('http');
+var fs = require('fs');
 
+var server = http.createServer(function (req, res) {
+    if (req.url == '/ez-order') {
+        fs.createReadStream('index.html').pipe(res);
+    } else {
+        res.write('invalid request! try with a valid url!');
+        res.end();
+    }
 
-app.get('/', function (req, res) {
-    res.send('Welcome Online Shoping!!!');
 });
 
-app.get('/ez-order', function (req, res) {
-    res.render('index');
-});
-
-
-app.listen(3000, function () {
-    console.log('express server started at 3000');
-});
+server.listen(3000);
+console.log('server started at 3000!');

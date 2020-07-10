@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>online shoping</title>
+</head>
+
+<body>
+	<form method='post' action="/ez-order">
+		<table border=1>
+			<thead>
+				<th>Item name</th>
+				<th>price</th>
+				<th>select quatity</th>
+
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						eraser
+					</td>
+					<td>
+						$2
+					</td>
+					<td>
+						<input type="number" name="eraser_q" id="eraser_q" onchange="calculate()">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						pencil
+					</td>
+					<td>
+						$3
+					</td>
+					<td>
+						<input type="number" name="pencil_q" id="pencil_q" onchange="calculate()">
+					</td>
+				</tr>
+				<tr>
+					<td>Total Amount</td>
+					<td>
+						<input type="text" id="total" value="0.0">
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<h4>order id<input type="text" id="order_id" disable name="order_id" value="" onchange="calculate()"></h4>
+		<button type="submit">Submit Order</button>
+	</form>
+</body>
+
+</html>
+<script>
+	function calculate() { //fuction to calculate total ammount
+		var quantity_pencil = document.getElementById('pencil_q').value //quanity of pencil retrived by id
+		var quantity_eraser = document.getElementById('eraser_q').value //quanity of eraser retrived by id
+		var total = quantity_pencil * 3 + quantity_eraser * 2 //total ammount 
+		document.getElementById('total').value = parseFloat(total) //total amount added in document
+		document.getElementById('order_id').value = Math.floor(Math.random() * 1e6)
+	}
+</script>
