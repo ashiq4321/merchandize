@@ -1,14 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>online shoping</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>My restaurant - Our Menus</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/fontAwesome.css">
+	<link rel="stylesheet" href="css/hero-slider.css">
+	<link rel="stylesheet" href="css/owl-carousel.css">
+	<link rel="stylesheet" href="css/templatemo-style.css">
+
+	<link
+		href="https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body>
+	<div class="header">
+		<div class="container">
+			<h1 class="navbar-brand scroll-top"> My restaurant</h1>
+		</div>
+	</div>
+
+
+	<section class="page-heading">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Our Menus</h1>
+					<p>select the quantiy of the dishes and submit</p>
+				</div>
+			</div>
+		</div>
+	</section>
 	<form method='post' action="/ez-order">
+		<section class="dinner-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="dinner-menu-content">
+							<div class="row">
+								<div class="col-md-7">
+									<h2>Main Menu</h2>
+									<div id="owl-dinner" class="owl-carousel owl-theme">
+										<div class="item col-md-12">
+											<div class="food-item">
+												<img src="img/Jeresh.jpg" alt="">
+												<div class="price">$30</div>
+												<div class="text-content">
+													<h4>Jeresh</h4>
+													select quantity<input type="number" name="eraser_q" id="eraser_q"
+														onchange="calculate()">
+												</div>
+											</div>
+										</div>
+										<div class="item col-md-12">
+											<div class="food-item">
+												<img src="img/Marqoq.jpg" alt="">
+												<div class="price">$25</div>
+												<div class="text-content">
+													<h4>Jeresh</h4>
+													select quantity<input type="number" name="eraser_q" id="eraser_q"
+														onchange="calculate()">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="left-image">
+										<img src="img/ChickenKabsah.jpg" alt="">
+										<div class="price">$20</div>
+										<div class="text-content">
+											<h4>Chicken Kabsah</h4>
+											select quantity<input type="number" name="eraser_q" id="eraser_q"
+												onchange="calculate()">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="maindish-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="maindish-menu-content">
+							<div class="row">
+								<div class="col-md-5">
+									<div class="left-image">
+										<img src="img/Babaganosh.jpg" alt="">
+										<div class="price">$15</div>
+										<div class="text-content">
+											<h4>Baba ganosh</h4>
+											select quantity<input type="number" name="eraser_q" id="eraser_q"
+												onchange="calculate()">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-7">
+									<h2>appetizer Menu</h2>
+									<div id="owl-breakfast" class="owl-carousel owl-theme">
+										<div class="item col-md-12">
+											<div class="food-item">
+												<img src="img/Waraqenab.jpg" alt="">
+												<div class="price">$15</div>
+												<div class="text-content">
+													<h4>Waraq enab</h4>
+													select quantity<input type="number" name="eraser_q" id="eraser_q"
+														onchange="calculate()">
+												</div>
+											</div>
+										</div>
+										<div class="item col-md-12">
+											<div class="food-item">
+												<img src="img/Humus.jpg" alt="">
+												<div class="price">$10</div>
+												<div class="text-content">
+													<h4>Humus</h4>
+													select quantity<input type="number" name="eraser_q" id="eraser_q"
+														onchange="calculate()">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="lunch-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="lunch-menu-content">
+							<div class="row">
+								<div class="col-md-7">
+									<h2>Salat Menu</h2>
+									<div id="owl-lunch" class="owl-carousel owl-theme">
+										<div class="item col-md-12">
+											<div class="food-item">
+												<img src="img/Salat.jpg" alt="">
+												<div class="price">$5</div>
+												<div class="text-content">
+													<h4>Salat</h4>
+													select quantity<input type="number" name="eraser_q" id="eraser_q"
+														onchange="calculate()">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<table border=1>
 			<thead>
 				<th>Item name</th>
@@ -25,7 +188,6 @@
 						$2
 					</td>
 					<td>
-						<input type="number" name="eraser_q" id="eraser_q" onchange="calculate()">
 					</td>
 				</tr>
 				<tr>
@@ -48,18 +210,20 @@
 			</tbody>
 
 		</table>
-		<h4>order id<input type="text" id="order_id" disable name="order_id" value="" onchange="calculate()"></h4>
+		<input type="hidden" id="order_id" name="order_id" value="">
 		<button type="submit">Submit Order</button>
 	</form>
+
+	<footer>
+	</footer>
+
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+	</script>
 </body>
 
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
 </html>
-<script>
-	function calculate() { //fuction to calculate total ammount
-		var quantity_pencil = document.getElementById('pencil_q').value //quanity of pencil retrived by id
-		var quantity_eraser = document.getElementById('eraser_q').value //quanity of eraser retrived by id
-		var total = quantity_pencil * 3 + quantity_eraser * 2 //total ammount 
-		document.getElementById('total').value = parseFloat(total) //total amount added in document
-		document.getElementById('order_id').value = Math.floor(Math.random() * 1e6)
-	}
-</script>

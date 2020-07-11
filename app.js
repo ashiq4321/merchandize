@@ -1,6 +1,7 @@
 var express = require('express'); //To include the express module
 var app = express(); //create a server object 
 let inv = require('./inventories.js') //To include the user define module(inventories)
+app.use(express.static('assests')) //To include static file
 
 const bodyParser = require('body-parser') //To include body-parser module
 
@@ -28,11 +29,11 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
     res.write("<h1> Your eraser_quantity is:" + eraser_quantity + "</h1>") //stream data
 
     if (pencil_quantity > inv['Pencil']) { //condtion to check pencil_quantity exceed
-        res.write('Sorry, The pencil_quantity we can supply is ' + inv['Pencil' + '<br>'])
+        res.write('Sorry, The pencil_quantity we can supply is ' + inv['Pencil'] + '<br>')
         pencil_quantity = inv['Pencil']
     }
     if (eraser_quantity > inv['Eraser']) { //condtion to check eraser_quantity exceed
-        res.write('Sorry, The eraser_quantity we can supply is ' + inv['Eraser' + '<br>'])
+        res.write('Sorry, The eraser_quantity we can supply is ' + inv['Eraser'] + '<br>')
         eraser_quantity = inv['Eraser']
     }
 
