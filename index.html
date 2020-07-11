@@ -31,18 +31,6 @@
 			<h1 class="navbar-brand scroll-top"> My restaurant</h1>
 		</div>
 	</div>
-
-
-	<section class="page-heading">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>Our Menus</h1>
-					<p>select the quantiy of the dishes and submit</p>
-				</div>
-			</div>
-		</div>
-	</section>
 	<form method='post' action="/ez-order">
 		<section class="dinner-menu">
 			<div class="container">
@@ -59,7 +47,7 @@
 												<div class="price">$30</div>
 												<div class="text-content">
 													<h4>Jeresh</h4>
-													select quantity<input type="number" name="eraser_q" id="eraser_q"
+													select quantity<input type="number" name="Jeresh_q" id="Jeresh_q"
 														onchange="calculate()">
 												</div>
 											</div>
@@ -69,8 +57,8 @@
 												<img src="img/Marqoq.jpg" alt="">
 												<div class="price">$25</div>
 												<div class="text-content">
-													<h4>Jeresh</h4>
-													select quantity<input type="number" name="eraser_q" id="eraser_q"
+													<h4>Marqoq</h4>
+													select quantity<input type="number" name="Marqoq_q" id="Marqoq_q"
 														onchange="calculate()">
 												</div>
 											</div>
@@ -83,8 +71,8 @@
 										<div class="price">$20</div>
 										<div class="text-content">
 											<h4>Chicken Kabsah</h4>
-											select quantity<input type="number" name="eraser_q" id="eraser_q"
-												onchange="calculate()">
+											select quantity<input type="number" name="ChickenKabsah_q"
+												id="ChickenKabsah_q" onchange="calculate()">
 										</div>
 									</div>
 								</div>
@@ -100,17 +88,6 @@
 					<div class="col-md-10 col-md-offset-1">
 						<div class="maindish-menu-content">
 							<div class="row">
-								<div class="col-md-5">
-									<div class="left-image">
-										<img src="img/Babaganosh.jpg" alt="">
-										<div class="price">$15</div>
-										<div class="text-content">
-											<h4>Baba ganosh</h4>
-											select quantity<input type="number" name="eraser_q" id="eraser_q"
-												onchange="calculate()">
-										</div>
-									</div>
-								</div>
 								<div class="col-md-7">
 									<h2>appetizer Menu</h2>
 									<div id="owl-breakfast" class="owl-carousel owl-theme">
@@ -120,8 +97,8 @@
 												<div class="price">$15</div>
 												<div class="text-content">
 													<h4>Waraq enab</h4>
-													select quantity<input type="number" name="eraser_q" id="eraser_q"
-														onchange="calculate()">
+													select quantity<input type="number" name="Waraqenab_q"
+														id="Waraqenab_q" onchange="calculate()">
 												</div>
 											</div>
 										</div>
@@ -131,10 +108,21 @@
 												<div class="price">$10</div>
 												<div class="text-content">
 													<h4>Humus</h4>
-													select quantity<input type="number" name="eraser_q" id="eraser_q"
+													select quantity<input type="number" name="Humus_q" id="Humus_q"
 														onchange="calculate()">
 												</div>
 											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="left-image">
+										<img src="img/Babaganosh.jpg" alt="">
+										<div class="price">$15</div>
+										<div class="text-content">
+											<h4>Baba ganosh</h4>
+											select quantity<input type="number" name="Babaganosh_q" id="Babaganosh_q"
+												onchange="calculate()">
 										</div>
 									</div>
 								</div>
@@ -159,7 +147,7 @@
 												<div class="price">$5</div>
 												<div class="text-content">
 													<h4>Salat</h4>
-													select quantity<input type="number" name="eraser_q" id="eraser_q"
+													select quantity<input type="number" name="Salat_q" id="Salat_q"
 														onchange="calculate()">
 												</div>
 											</div>
@@ -172,46 +160,14 @@
 				</div>
 			</div>
 		</section>
-		<table border=1>
-			<thead>
-				<th>Item name</th>
-				<th>price</th>
-				<th>select quatity</th>
+		<div class="container">
+			<div class="col-md-10 col-md-offset-2">
+				Total Amount<input type="text" id="total" value="0.0">
+				<input type="hidden" id="order_id" name="order_id" value="">
+				<button type="submit">Submit Order</button>
+			</div>
+		</div>
 
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						eraser
-					</td>
-					<td>
-						$2
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						pencil
-					</td>
-					<td>
-						$3
-					</td>
-					<td>
-						<input type="number" name="pencil_q" id="pencil_q" onchange="calculate()">
-					</td>
-				</tr>
-				<tr>
-					<td>Total Amount</td>
-					<td>
-						<input type="text" id="total" value="0.0">
-					</td>
-				</tr>
-			</tbody>
-
-		</table>
-		<input type="hidden" id="order_id" name="order_id" value="">
-		<button type="submit">Submit Order</button>
 	</form>
 
 	<footer>
@@ -225,5 +181,25 @@
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+<script>
+	function calculate() { //fuction to calculate total ammount
+		var quantity_Jeresh = document.getElementById('Jeresh_q').value //quanity of Jeresh retrived by id
+		var quantity_Marqoq = document.getElementById('Marqoq_q').value //quanity of Marqoq retrived by id
+		var quantity_ChickenKabsah = document.getElementById('ChickenKabsah_q')
+			.value //quanity of ChickenKabsah retrived by id
+		var quantity_Waraqenab = document.getElementById('Waraqenab_q').value //quanity of Waraqenab retrived by id
+		var quantity_Humus = document.getElementById('Humus_q').value //quanity of Humus retrived by id
+		var quantity_Babaganosh = document.getElementById('Babaganosh_q').value //quanity of Babaganosh retrived by id
+		var quantity_Salat = document.getElementById('Salat_q').value //quanity of Salat retrived by id
+		var total = quantity_Jeresh * 30 + quantity_Marqoq * 25 + quantity_ChickenKabsah * 20 + quantity_Waraqenab * 15 +
+			quantity_Humus * 10 + quantity_Babaganosh * 15 + quantity_Salat * 5 //total ammount 
+		document.getElementById('total').value = parseFloat(total) //total amount added in document
+		document.getElementById('order_id').value = Math.floor(Math.random() * 1e6)
+	}
+
+	function getorderid() {
+		document.getElementById('order_id').value = Math.floor(Math.random() * 1e8)
+	}
+</script>
 
 </html>
