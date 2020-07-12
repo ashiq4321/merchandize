@@ -1,0 +1,24 @@
+{
+  "name": "merchandize",
+  "version": "1.0.0",
+  "description": "web app that allows client to order merchandize from an online business",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashiq4321/merchandize.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashiq4321/merchandize/issues"
+  },
+  "homepage": "https://github.com/ashiq4321/merchandize#readme"
+}

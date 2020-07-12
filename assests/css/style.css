@@ -1,0 +1,59 @@
+body {
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Global */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Header **/
+header {
+  background: #004EA8;
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #ff0000 3px solid;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+/* item */
+ul li article {
+  list-style: none;
+  padding: 20px;
+  border: #cccccc solid 1px;
+  margin-bottom: 5px;
+  background: #e6e6e6;
+}
+
+li {
+  float: left;
+  margin-top: 10px;
+}
+
+.img {
+  width: 200px;
+  /* width of container */
+  height: 200px;
+  /* height of container */
+  object-fit: cover;
+  border: 5px solid black;
+}

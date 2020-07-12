@@ -5,6 +5,6 @@ let inventory = {
     "Waraq enab": 15,
     "Humus": 10,
     'Baba ganosh': 15,
-    "Salat": 5,
+    "Salat": 15,
 }
 module.exports = (inventory) //to export json data
