@@ -1,6 +1,7 @@
 var express = require('express'); //To include the express module
 var app = express(); //create a server object 
 let inv = require('./inventories.js') //To include the user define module(inventories)
+var fs = require('fs');
 app.use(express.static('assests')) //To include static file
 
 const bodyParser = require('body-parser') //To include body-parser module
@@ -23,7 +24,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
     var Humus_quantity = 0; //intializing variable
     var Babaganosh_quantity = 0; //intializing variable
     var Salat_quantity = 0; //intializing variable
-    res.write('<div class="container"> Requisition Order:' + req.body.order_id + '<br><br>') //retrive value of 'order_id'
+    res.write('<body style="background-color: coral"><div  align="center"> Requisition Order:' + req.body.order_id + '<br><br>') //retrive value of 'order_id'
 
     id = req.body.order_id;
 
@@ -87,10 +88,10 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
 
     cost = Jeresh_quantity * 30 + Marqoq_quantity * 25 + ChickenKabsah_quantity * 20 + Waraqenab_quantity * 15 +
         Humus_quantity * 10 + Babaganosh_quantity * 15 + Salat_quantity * 5 // cost calculation
-    res.write('<br>Your total is $' + cost + '<BR>') //stream data
+    res.write('<br><h2>Your total is $' + cost + ' </h2><br>') //stream data
     tax = cost * 0.06 //tax calculation
-    res.write('Your Tax is: $' + tax + '<br>') //stream data
-    res.write('Amount Due: $' + (cost + tax).toFixed(2)) //stream data
+    res.write(' <h2>Your Tax is: $' + tax + ' </h2><br>') //stream data
+    res.write('<h2>Amount Due: $' + (cost + tax).toFixed(2) + '/<h2>') //stream data
 
     res.write('<form action = "http://localhost:3000/confirm_order" method = "post">') //stream data
     res.write('<input type="submit" value="Confirm Order">') //stream data
@@ -98,19 +99,20 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
 
     res.write('<form action = "http://localhost:3000/cancel_order" method = "post">') //stream data
     res.write('<input type="submit" value="Cancel Order">') //stream data
-    res.write('</form> </div>') //stream data
+    res.write('</form> </div> </body>') //stream data
     res.end()
 });
 
 app.post('/confirm_order', (req, res) => { //To handle post request in '/confirm_order' 
     res.setHeader('Content-Type', 'text/html') //To send response to client  as html script
-    res.write('Order ' + id + ' confirmed. Thank you') //stream data
+    res.write('<body style="background-color: coral"><div  style="width:1000px; margin:20% auto;"> <h1>Order ' + id + ' confirmed. Thank you </h1> </div></body>') //stream data
     res.end()
 })
 
 app.post('/cancel_order', (req, res) => { //To handle post request in '/cancel_order' 
     res.setHeader('Content-Type', 'text/html') //To send response to client  as html script
-    res.write('Order cancelled. Please visit us again') //stream data
+
+    res.write(' <body style="background-color: coral"><div  style="width:1000px; margin:20% auto;" > <h1>Order cancelled. Please visit us again</h1> </div></body>') //stream data
     res.end()
 })
 

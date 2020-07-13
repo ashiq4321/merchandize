@@ -19,7 +19,8 @@ ul {
 
 
 /* Header **/
-header {
+header,
+footer {
   background: #004EA8;
   color: #ffffff;
   padding-top: 30px;
@@ -27,13 +28,6 @@ header {
   border-bottom: #ff0000 3px solid;
 }
 
-header #branding {
-  float: left;
-}
-
-header #branding h1 {
-  margin: 0;
-}
 
 /* item */
 ul li article {
