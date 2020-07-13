@@ -86,7 +86,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
     }
 
 
-    cost = Jeresh_quantity * 30 + Marqoq_quantity * 25 + ChickenKabsah_quantity * 20 + Waraqenab_quantity * 15 +
+    cost = Jeresh_quantity * 30 + Marqoq_quantity * 25 + ChickenKabsah_quantity * 50 + Waraqenab_quantity * 15 +
         Humus_quantity * 10 + Babaganosh_quantity * 15 + Salat_quantity * 5 // cost calculation
     res.write('<br><h2>Your total is $' + cost + ' </h2><br>') //stream data
     tax = cost * 0.06 //tax calculation
