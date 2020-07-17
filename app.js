@@ -1,10 +1,13 @@
 var express = require('express'); //To include the express module
 var app = express(); //create a server object 
-let inv = require('./inventories.js') //To include the user define module(inventories)
 var fs = require('fs');
 app.use(express.static('assests')) //To include static file
-
 const bodyParser = require('body-parser') //To include body-parser module
+
+
+let inv = fs.readFileSync('inventories.json') //To include the user define module(inventories)
+inv = JSON.parse(inv);
+
 
 var id = 0;
 app.use(bodyParser.urlencoded({
@@ -31,57 +34,71 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
     if (req.body.Jeresh_q != '') {
         var Jeresh_quantity = parseInt(req.body.Jeresh_q) //retrive value of 'Jeresh_quantity'
         res.write("<h1> Your Jeresh quantity is:" + Jeresh_quantity + "</h1>") //stream data
-        if (Jeresh_quantity > inv['Jeresh']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Jeresh'])
-            Jeresh_quantity = inv['Jeresh']
+        if (Jeresh_quantity > inv.Jeresh) { //inventory quantity check
+            Jeresh_quantity = inv.Jeresh
+            res.write('Sorry, The quantity we can supply is ' + inv.Jeresh)
+        } else {
+            inv.Jeresh = inv.Jeresh - Jeresh_quantity;
         }
     }
     if (req.body.Marqoq_q != '') {
         var Marqoq_quantity = parseInt(req.body.Marqoq_q) //retrive value of 'Marqoq_quantity'
         res.write("<h1> Your Marqoq quantity is:" + Marqoq_quantity + "</h1>") //stream data
-        if (Marqoq_quantity > inv['Marqoq']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Marqoq'])
-            Marqoq_quantity = inv['Marqoq']
+        if (Marqoq_quantity > inv.Marqoq) { //inventory quantity check
+            Marqoq_quantity = inv.Marqoq
+            res.write('Sorry, The quantity we can supply is ' + inv.Marqoq)
+        } else {
+            inv.Marqoq = inv.Marqoq - Marqoq_quantity;
         }
     }
     if (req.body.ChickenKabsah_q != '') {
         var ChickenKabsah_quantity = parseInt(req.body.ChickenKabsah_q) //retrive value of 'ChickenKabsah_quantity'
         res.write("<h1> Your Chicken Kabsah quantity is:" + ChickenKabsah_quantity + "</h1>") //stream data
-        if (ChickenKabsah_quantity > inv['Chicken Kabsah']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Chicken Kabsah'])
-            ChickenKabsah_quantity = inv['Chicken Kabsah']
+        if (ChickenKabsah_quantity > inv.Chicken_Kabsah) { //inventory quantity check
+            res.write('Sorry, The quantity we can supply is ' + inv.Chicken_Kabsah)
+            ChickenKabsah_quantity = inv.Chicken_Kabsah
+        } else {
+            inv.Chicken_Kabsah = inv.Chicken_Kabsah - ChickenKabsah_quantity;
         }
     }
     if (req.body.Waraqenab_q != '') {
         var Waraqenab_quantity = parseInt(req.body.Waraqenab_q) //retrive value of 'Waraqenab_quantity'
         res.write("<h1> Your Waraqenab quantity is:" + Waraqenab_quantity + "</h1>") //stream data
-        if (Waraqenab_quantity > inv['Waraq enab']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Waraq enab'])
-            Waraqenab_quantity = inv['Waraq enab']
+        if (Waraqenab_quantity > inv.Waraq_enab) { //inventory quantity check
+            res.write('Sorry, The quantity we can supply is ' + inv.Waraq_enab)
+            Waraqenab_quantity = inv.Waraq_enab
+        } else {
+            inv.Waraq_enab = inv.Waraq_enab - Waraqenab_quantity;
         }
     }
     if (req.body.Humus_q != '') {
         var Humus_quantity = parseInt(req.body.Humus_q) //retrive value of 'Humus_quantity'
         res.write("<h1> Your Humus quantity is:" + Humus_quantity + "</h1>") //stream data
-        if (Humus_quantity > inv['Humus']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Humus'])
-            Humus_quantity = inv['Humus']
+        if (Humus_quantity > inv.Humus) { //inventory quantity check
+            res.write('Sorry, The quantity we can supply is ' + inv.Humus)
+            Humus_quantity = inv.Humus
+        } else {
+            inv.Humus = inv.Humus - Humus_quantity;
         }
     }
     if (req.body.Babaganosh_q != '') {
         var Babaganosh_quantity = parseInt(req.body.Babaganosh_q) //retrive value of 'Babaganosh_quantity'
         res.write("<h1> Your Babaganosh quantity is:" + Babaganosh_quantity + "</h1>") //stream data
-        if (Babaganosh_quantity > inv['Baba ganosh']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Baba ganosh'])
-            Babaganosh_quantity = inv['Baba ganosh']
+        if (Babaganosh_quantity > inv.Baba_ganosh) { //inventory quantity check
+            res.write('Sorry, The quantity we can supply is ' + inv.Baba_ganosh)
+            Babaganosh_quantity = inv.Baba_ganosh
+        } else {
+            inv.Baba_ganosh = inv.Baba_ganosh - Babaganosh_quantity;
         }
     }
     if (req.body.Salat_q != '') {
         var Salat_quantity = parseInt(req.body.Salat_q) //retrive value of 'Marqoq_quantity'
         res.write("<h1> Your Salat quantity is:" + Salat_quantity + "</h1>") //stream data
-        if (Salat_quantity > inv['Salat']) { //inventory quantity check
-            res.write('Sorry, The quantity we can supply is ' + inv['Salat'])
-            Salat_quantity = inv['Salat']
+        if (Salat_quantity > inv.Salat) { //inventory quantity check
+            res.write('Sorry, The quantity we can supply is ' + inv.Salat)
+            Salat_quantity = inv.Salat
+        } else {
+            inv.Salat = inv.Salat - Salat_quantity;
         }
     }
 
@@ -104,6 +121,10 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
 });
 
 app.post('/confirm_order', (req, res) => { //To handle post request in '/confirm_order' 
+    inv = JSON.stringify(inv);
+    fs.writeFile('inventories.json', inv, (err) => {
+        console.log(err);
+    })
     res.setHeader('Content-Type', 'text/html') //To send response to client  as html script
     res.write('<body style="background-color: coral"><div  style="width:1000px; margin:20% auto;"> <h1>Order ' + id + ' confirmed. Thank you </h1> </div></body>') //stream data
     res.end()
