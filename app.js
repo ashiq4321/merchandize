@@ -38,7 +38,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             Jeresh_quantity = inv.Jeresh
             res.write('Sorry, The quantity we can supply is ' + inv.Jeresh)
         } else {
-            inv.Jeresh = inv.Jeresh - Jeresh_quantity;
+            inv['Jeresh'] = inv.Jeresh - Jeresh_quantity;
         }
     }
     if (req.body.Marqoq_q != '') {
@@ -48,7 +48,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             Marqoq_quantity = inv.Marqoq
             res.write('Sorry, The quantity we can supply is ' + inv.Marqoq)
         } else {
-            inv.Marqoq = inv.Marqoq - Marqoq_quantity;
+            inv['Marqoq'] = inv.Marqoq - Marqoq_quantity;
         }
     }
     if (req.body.ChickenKabsah_q != '') {
@@ -58,7 +58,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             res.write('Sorry, The quantity we can supply is ' + inv.Chicken_Kabsah)
             ChickenKabsah_quantity = inv.Chicken_Kabsah
         } else {
-            inv.Chicken_Kabsah = inv.Chicken_Kabsah - ChickenKabsah_quantity;
+            inv['Chicken_Kabsah'] = inv.Chicken_Kabsah - ChickenKabsah_quantity;
         }
     }
     if (req.body.Waraqenab_q != '') {
@@ -68,7 +68,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             res.write('Sorry, The quantity we can supply is ' + inv.Waraq_enab)
             Waraqenab_quantity = inv.Waraq_enab
         } else {
-            inv.Waraq_enab = inv.Waraq_enab - Waraqenab_quantity;
+            inv['Waraq_enab'] = inv.Waraq_enab - Waraqenab_quantity;
         }
     }
     if (req.body.Humus_q != '') {
@@ -78,7 +78,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             res.write('Sorry, The quantity we can supply is ' + inv.Humus)
             Humus_quantity = inv.Humus
         } else {
-            inv.Humus = inv.Humus - Humus_quantity;
+            inv['Humus'] = inv.Humus - Humus_quantity;
         }
     }
     if (req.body.Babaganosh_q != '') {
@@ -88,7 +88,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             res.write('Sorry, The quantity we can supply is ' + inv.Baba_ganosh)
             Babaganosh_quantity = inv.Baba_ganosh
         } else {
-            inv.Baba_ganosh = inv.Baba_ganosh - Babaganosh_quantity;
+            inv['Baba_ganosh'] = inv.Baba_ganosh - Babaganosh_quantity;
         }
     }
     if (req.body.Salat_q != '') {
@@ -98,7 +98,7 @@ app.post('/ez-order', function (req, res) { //To handle post request in '/ez-ord
             res.write('Sorry, The quantity we can supply is ' + inv.Salat)
             Salat_quantity = inv.Salat
         } else {
-            inv.Salat = inv.Salat - Salat_quantity;
+            inv['Salat'] = inv.Salat - Salat_quantity;
         }
     }
 
