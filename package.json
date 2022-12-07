@@ -4,7 +4,7 @@
   "description": "web app that allows client to order merchandize from an online business",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "jquery": "^3.4.1",
     "jsonfile": "^6.0.1",
     "mysql": "^2.18.1"
